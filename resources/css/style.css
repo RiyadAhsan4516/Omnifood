@@ -1,0 +1,585 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  /* we are using this html object just to set up default values such as default font family, 
+  default color, default weight etc. we can manipulate them later on */
+
+  background-color: white;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 22px;
+  text-rendering: optimizeLegibility; /* setting text-rendering to optimizeLegibility allows us to render the text more smoothly. */
+  overflow-x: hidden;
+}
+
+.row {
+  max-width: 1740px;
+  margin: 0 auto 0 auto; /* the direction goes clock-wise: margin: top right bottom left;
+    /* Another shorter way of doing this is margin: 0 auto; This means, top and bottom will be
+    0 and left and right will be automatically adjusted to centralize the element. */
+}
+
+section {
+  padding: 90px 0;
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! HEADER SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+header {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(5, 5, 5, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(img/hero.jpg);
+  background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero.jpg); /* Background images can be set directly from the css file like this */
+  /* The linear gradient allows us to apply a color shade over the background image. It has to be written first before the url.
+  It transforms to one color from another. That is why we had to give two rgba values. change the values to see what happens */
+  background-size: cover; /* This is to cover the whole view port. Before this the image size was not optimized for the view port */
+  background-position: center; /* Even though the background covered the whole view port, it was not centrally positioned. That is why we need to do this. */
+  height: 100vh; /* this means the header will be 100% of  the visible view port */
+  background-attachment: fixed;
+  /* Sometimes the background images might repeat themselves. So setting background-repeat to no-repeat will solve the problem. 
+  Setting the background attatchment to fixed will fix the position of the background i.e. the background will remain static while
+  others can be scrolled. */
+}
+
+/* ?------------text box containing the heading--------- */
+
+h1 {
+  margin: 0; /* The normalized.css added some margin on top and bottom of the h1 element. This is why we have to remove it.
+  /* Comment out this css command to see how it looked like before */
+  margin-bottom: 1.5%;
+  font-size: 240%; /* This percentage is relative to the font-size declared in the html object which was 20px. So 240% of 20px is 40px. Now if we change the html font size (line 10)
+    then this font-size will automatically change. We can use this reference to change the font-size of all the texts in the website */
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+  /* The text styles can be manipulated through css like this as well. The commands speak for themselves. */
+}
+.hero-text-box {
+  position: absolute; /* this is to not let it become responsive. We want it to be absolutely positioned. */
+  width: 1740px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* this takes off 50% from the height and 50% from the width, puhsing it to the left. This can also be set without using the transform, but if we do it
+    this way then the text box becomes responsive. This part is a little difficult to understand so better if you just practiced and memorized the technique. */
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* ?-----------------------buttons----------------------- */
+
+.hero-text-box a:link,
+a:visited {
+  /* there are multiple pseudo-classes namely link, visited, active and hover. These have their own functionalities. Link denotes how
+    the button should look normally and visited denotes how it should look after it has been clicked once */
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 2% 0 0;
+  background-color: rgba(78, 20, 145, 1);
+  color: white;
+  padding: 10px 30px;
+  font-weight: 300;
+  border: 1px solid rgb(78, 20, 145, 1);
+  border-radius: 200px; /* use px instead of % in case of border radius. */
+  -webkit-transition: background-color 0.2s, border 0.2s;
+  transition: background-color 0.2s, border 0.2s; /* this means that when the buttons are hovered, if the color is supposed to change then it will change after 0.2s */
+}
+.hero-text-box a:hover {
+  background-color: rgba(50, 9, 97, 1);
+  border: 1px solid rgb(52, 27, 100);
+  cursor: pointer;
+}
+
+/* ?-------------------Logo------------------------- */
+
+.logo {
+  height: 120px;
+  width: auto;
+  float: left;
+  margin-top: 10px;
+}
+.logo-black {
+  display: none;
+}
+
+/* ?----------------Navigation bar --------------- */
+
+.main-nav {
+  float: right;
+  list-style: none; /* this gets rid of the bullet points */
+  margin-top: 30px;
+}
+.main-nav li {
+  display: inline-block;
+  margin-right: 40px;
+  font-weight: 300;
+  word-spacing: 4px;
+}
+.main-nav li a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.main-nav li a:hover {
+  color: rgb(240, 150, 47);
+  border-bottom: 2px solid rgb(240, 150, 47);
+  padding-bottom: 8px;
+}
+
+/* ?---------------Sticky navigation-------------- */
+
+/* just format the sticky navigation and later using jquery you can define when these css commands should be executed. */
+.sticky {
+  position: fixed; /* this fixes the postion of the element even if the window is scrolled */
+  top: 0; /* once this position is defined, it ruins the previously set width and position parameters. So we have to set the width, left position and right position */
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 2px rgb(202, 202, 202);
+  z-index: 10;
+}
+.sticky .main-nav li a {
+  text-decoration: none;
+  color: #555;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.sticky .logo-black {
+  display: block;
+  height: 50px;
+}
+.sticky .logo-white {
+  display: none;
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! FEATURE SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+.feature {
+  height: 80vh;
+  /* margin-top: 40px; */
+}
+h2 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2:after {
+  /* using the after pseudo class you can add stuffs directly from the css file */
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: " "; /* whenever we use the after pseudo class, this content must be set up. Not putting anything will give us a line */
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+h3 {
+  font-weight: 400;
+  font-size: 110%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.long-copy {
+  line-height: 160%; /* check the lecture on typography to know what line height is and what it should be */
+  width: 50%; /* instead of aligning the text this can also be done. Make the width half or whatever looks good and then push half of width equivalent distance from the left using the margin-left */
+  margin-left: 25%;
+  margin-bottom: 30px;
+}
+.box {
+  padding: 1%;
+}
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+
+/* ?----------------Icons--------------- */
+.icon-big {
+  font-size: 190%;
+  display: block; /* to make sure the icon forces a line break */
+  color: rgb(93, 51, 133);
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! MEALS SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+.meals {
+  padding: 0; /* normalize.css added some padding to it. So we had to make it 0 */
+}
+.meals-showcase {
+  list-style: none; /* to get rid of the bullet points */
+  width: 100%;
+}
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+.meal-photo {
+  width: 100%; /* this means that the photo should have 100% width of its parent's width which is 25(line214) */
+  margin: 0; /* the normalize file defined some margins for this element as well */
+  overflow: hidden; /* this ensures that even if the image becomes bigger, it does not overflow the parent container which is .meal-photo. */
+  background-color: black; /* behind the image is the black background color. if the opacity of the image is lowered then it can be seen */
+}
+.meal-photo img {
+  width: 100%; /* this is to ensure that 100% of the photo fits properly inside the figure element */
+  height: auto;
+  -webkit-transform: scale(1.15);
+  transform: scale(
+    1.15
+  ); /* this means that instead of 100% the photo is now going to be 115% big */
+  opacity: 0.6; /* lowered the opacity so that a little bit of the background color which is black can be seen, making the picture look a little darker */
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+.meal-photo img:hover {
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+  opacity: 1;
+}
+/* We could've just set the width to 115% in the meal-photo section. But we used transform to manipulate it and use a cool hovering effect. Its just an easier and more efficient way of doing it */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* The float objects need to be cleared afterwards. That is why we use this clearfix technique. The clearfix class should be applied to the ul of the html since after that the float has been applied to the 
+li elements */
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! STEPS SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+.Steps {
+  background-color: rgb(241, 241, 241);
+}
+.steps-box:first-child {
+  /*this is another way of selecting an element with the same class name. If they have the same parent element, then the first one can be referred as the first child*/
+  text-align: right; /*text-align actually works for all inline-block elements*/
+  padding-right: 3%;
+  margin-top: 30px;
+}
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+.app-screen {
+  width: 40%;
+}
+.works-step {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.works-step div {
+  display: block;
+  padding-top: 1%;
+  border: 3px solid orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  float: left;
+  margin-right: 20px;
+  font-size: 120%;
+}
+.works-step p {
+  padding-top: 1%;
+}
+.btn-app img {
+  margin-top: 50px; /* try selecting the inner element if the outer element does not respond to the command*/
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! CITIES SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+.cities-col {
+  padding: 1%;
+}
+.city-image {
+  width: 100%;
+  height: auto;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.cities-icon {
+  font-size: 160%;
+  float: left;
+  color: rgb(93, 51, 133);
+}
+.city-col div {
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+.city-col div p {
+  display: inline-block;
+  margin-left: 20px;
+  padding-top: 2%;
+}
+.city-col h3 {
+  margin-bottom: 35px;
+}
+.city-col {
+  padding-left: 1%;
+  margin-top: 0;
+}
+.city-col div a {
+  margin-left: 20px;
+  color: rgb(93, 51, 133);
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! CUSTOMER TESTIMONIALS
+/* !----------------------------------------------------------------------------------------------------- */
+
+.customer-testimonials {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(img/back-customers.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/back-customers.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: whitesmoke;
+  background-attachment: fixed;
+  padding-top: 7%;
+}
+.customer-row {
+  margin-top: 8%;
+}
+blockquote:before {
+  /* before is another pseudo class through which we can add stuffs before the targetted element */
+  content: "\201C";
+  font-size: 400%;
+  display: block;
+}
+blockquote {
+  padding: 2%;
+  font-style: italic; /* this works only because we incorporated the italic style of our fonts from the google fonts api (line 11 html file) */
+  line-height: 145%;
+}
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block; /* instead of putting a line break sometimes just changing the display to block might do the trick */
+}
+cite img {
+  height: 60px;
+  border: 1px solid blueviolet;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle; /* this vertically aligns the image with the rest of the elements. Manually doing it is not necessary */
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! SIGN UP SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+.sign-up {
+  background-color: rgb(241, 241, 241);
+}
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%; /* 90% of its parent's width which is col. Any elements width if set to % then it will be calculated based on its parent's width. */
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin-left: 5%; /* After accumulating 90% width, 10% remains. So pushing half of that 10% from the left would centralize the element. */
+  box-shadow: 0 2px 2px #afaeae;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+.plan-box:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.plan-box div {
+  padding: 15px;
+  border-bottom: 2px solid #e8e8e8;
+}
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px; /* modifying the background color of the first child took away the border radius */
+  border-top-right-radius: 5px;
+}
+.plan-box div:last-child {
+  text-align: center;
+  border: none;
+}
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 10px;
+  font-weight: 300;
+  color: rgb(78, 20, 145, 1);
+}
+.plan-price span {
+  font-size: 30%; /* this 30% is calculated based on its parent's font size which is plan-price. Not based on the default value which we set to 22px */
+  font-weight: 400;
+}
+.plan-price-meal {
+  font-size: 80%;
+}
+.plan-box ul {
+  list-style: none; /* reminder, this removes the dots from the unordered lists */
+}
+.plan-box ul li {
+  padding: 5px 0;
+}
+.icon-small,
+.icon-small-cross {
+  color: green;
+  margin-right: 10px;
+}
+.icon-small-cross {
+  color: red;
+}
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  /* there are multiple pseudo-classes namely link, visited, active and hover. They have their own functionalities. Link denotes how
+    the button should look normally and visited denotes how it should look after it has been clicked once */
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 2% 0 0;
+  background-color: rgba(78, 20, 145, 1);
+  color: white;
+  padding: 10px 30px;
+  font-weight: 300;
+  border: 1px solid rgb(78, 20, 145, 1);
+  border-radius: 200px; /* use px instead of % in case of border radius. */
+  -webkit-transition: background-color 0.2s, border 0.2s;
+  transition: background-color 0.2s, border 0.2s; /* this means that when the buttons are hovered, if the color is supposed to change then it will change after 0.2s */
+}
+.btn:hover,
+input[type="submit"]:hover {
+  background-color: rgba(50, 9, 97, 1);
+  border: 1px solid rgb(52, 27, 100);
+}
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! CONTACT FORM
+/* !----------------------------------------------------------------------------------------------------- */
+
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+  /* the form could have been centralized in another way. We took 60% of the width of the row. So 40% remains. So we could just push the form 20% from the left to centralize it */
+}
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  /* this is another way of selecting elements. by including [type=text]/[type=email] we are saying only select the inputs elements whose type is set to text/email */
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid rgb(194, 192, 192);
+}
+textarea {
+  height: 100px;
+}
+
+/* The submit button is added to the btn class above */
+
+input[type="checkbox"] {
+  margin: 10px 5px 10px 0;
+}
+*:focus {
+  outline: none;
+} /* this prevents the browser from adding an outline to any input field when selected */
+
+/* !----------------------------------------------------------------------------------------------------- */
+/* ! FOOTER SECTION
+/* !----------------------------------------------------------------------------------------------------- */
+
+footer {
+  background-color: #333;
+  height: 20vh;
+  font-size: 80%;
+}
+.footer-nav,
+.social-links {
+  list-style: none;
+  margin-top: 20px;
+}
+.footer-nav a {
+  text-decoration: none;
+  float: left;
+  margin-right: 40px;
+  color: rgb(175, 174, 174);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.social-links {
+  float: right;
+}
+.social-links li {
+  display: inline-block;
+  margin-left: 40px;
+}
+.footer-nav a:hover {
+  color: white;
+}
+footer p {
+  color: rgb(175, 174, 174);
+  text-align: center;
+  margin-top: 40px;
+}
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 150%;
+}
+.footer-icon {
+  color: rgb(175, 174, 174);
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.ion-social-facebook:hover {
+  color: #3b5998;
+}
+.ion-social-twitter:hover {
+  color: #00aced;
+}
+.ion-social-googleplus:hover {
+  color: #dd4b39;
+}
+.ion-social-instagram:hover {
+  color: #517fa4;
+}

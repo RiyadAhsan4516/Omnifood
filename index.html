@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The meta tag is essential in making the website responsive -->
+
+    <title>Omnifood</title>
+    <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendors/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! HEADER SECTION -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <header>
+      <!--Html actually has an element called header. We will put our navigation, background image, logo and a few 
+        buttons in this section. Header element works exactly like div element. The header element will tell the browser that  
+        this is the header of the website and not just a meaningless div container. There are other elements like main 
+        (for the main contents of the website) and footer for the footer just like this-->
+      <nav>
+        <div class="row">
+          <img
+            src="resources/img/logo-white.png"
+            alt="Omnifood logo"
+            class="logo logo-white"
+          />
+          <img
+            src="resources/img/logo.png"
+            alt="Omnifood logo"
+            class="logo logo-black"
+          />
+
+          <ul class="main-nav">
+            <li><a href="#">Food delivery</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Our cities</a></li>
+            <li><a href="#">Sign up</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hero-text-box">
+        <h1>
+          Goodbye junk food.<br />
+          Hello super healthy meals!
+        </h1>
+        <a class="js--scroll-to-plans" href="#">I'm hungry</a>
+
+        <!-- For buttons we can either use the actual button element or we can just create a link and then modify 
+            them to look like buttons -->
+
+        <a class="js--scroll-to-start" href="#">Show me more</a>
+      </div>
+    </header>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! FEATURES SECTION -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="feature js--section--feature">
+      <div class="row">
+        <h2>GET FOOD FAST &mdash; NOT FAST FOOD</h2>
+        <!-- &mdash is a special character to write (-) you can also write it in an normal way it doesn't really matter. 
+            Just looks good -->
+        <p class="long-copy">
+          Hello, we're omnifood your new premium food delivery service. We know
+          you're always busy. No time for cooking. So let us take care of that,
+          we're really good at it, we promise!
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col span-1-of-4 box">
+          <i class="ion-calendar icon-big"></i>
+          <!-- open the link https://ionic.io/ionicons/v2 to see the names of the icons-->
+          <h3>Upto 365 days/year</h3>
+          <p>
+            Never cook again! we really mean that. Our sbscription include upto
+            365 days/year coverage. You can also choose to order more flexibly
+            if that is your style
+          </p>
+        </div>
+        <div class="col span-1-of-4 box">
+          <i class="ion-clock icon-big"></i>
+          <h3>Ready in 20 min!</h3>
+          <p>
+            You're only 20 minutes away from your super healthy and delicious
+            meal delivered right to your home. We work with the best chefs in
+            each town to ensure that you're 100% happy
+          </p>
+        </div>
+        <div class="col span-1-of-4 box">
+          <i class="ion-leaf icon-big"></i>
+          <h3>100% organic</h3>
+          <p>
+            All our vegetables are fresh, organic and local. Animals are raised
+            without hormones or antibiotics. Good for your health, the
+            environment and it also tastes better.
+          </p>
+        </div>
+        <div class="col span-1-of-4 box">
+          <i class="ion-android-restaurant icon-big"></i>
+          <h3>Order anything</h3>
+          <p>
+            We don't limit your creativity, which means you can order whatever
+            you feel like. You can also choose from our menu containing over 100
+            delicious meals. It's upto you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! MEALS SECTION -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="meals">
+      <ul class="meals-showcase clearfix">
+        <li>
+          <figure class="meal-photo">
+            <!-- figure is an element that can hold images -->
+            <img src="resources/img/1.jpg" alt="meals" />
+          </figure>
+        </li>
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/2.jpg" alt="meals" />
+          </figure>
+        </li>
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/3.jpg" alt="meals" />
+          </figure>
+        </li>
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/4.jpg" alt="meals" />
+          </figure>
+        </li>
+      </ul>
+      <ul class="meals-showcase clearfix">
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/5.jpg" alt="meals" />
+          </figure>
+        </li>
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/6.jpg" alt="meals" />
+          </figure>
+        </li>
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/7.jpg" alt="meals" />
+          </figure>
+        </li>
+        <li>
+          <figure class="meal-photo">
+            <img src="resources/img/8.jpg" alt="meals" />
+          </figure>
+        </li>
+      </ul>
+      <!-- Sometimes its better to use unordered lists instead of creating div containers and putting stuffs inside of them.
+        Now this lists can simply be placed side by side -->
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! STEPS SECTION -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="Steps">
+      <div class="row">
+        <h2>HOW IT WORKS &mdash; SIMPLE AS 1,2,3</h2>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-2 steps-box">
+          <img
+            src="resources/img/app-iPhone.png"
+            alt="i-phone image"
+            class="app-screen"
+          />
+        </div>
+        <div class="col span-1-of-2 steps-box">
+          <div class="works-step">
+            <div>1</div>
+            <p>
+              Choose the subscription plan that best fits your needs and sign up
+              today.
+            </p>
+          </div>
+          <div class="works-step">
+            <div>2</div>
+            <p>
+              Order your delicious meal using our mobile app or website. You can
+              even call us!
+            </p>
+          </div>
+          <div class="works-step">
+            <div>3</div>
+            <p>
+              Enjoy your meal after less than 20 minutes. See you the next time.
+            </p>
+          </div>
+
+          <a href="#" class="btn-app"
+            ><img src="resources/img/download-app-android.png" alt="download"
+          /></a>
+        </div>
+      </div>
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--!CITIES SECTION-->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="cities">
+      <div class="row">
+        <h2>WE'RE CURRENTLY IN THESE CITIES</h2>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-4 cities-col">
+          <img src="resources/img/berlin.jpg" alt="berlin" class="city-image" />
+        </div>
+        <div class="col span-1-of-4 cities-col">
+          <img
+            src="resources/img/lisbon-3.jpg"
+            alt="lisbon"
+            class="city-image"
+          />
+        </div>
+        <div class="col span-1-of-4 cities-col">
+          <img src="resources/img/london.jpg" alt="london" class="city-image" />
+        </div>
+        <div class="col span-1-of-4 cities-col">
+          <img
+            src="resources/img/san-francisco.jpg"
+            alt="san-francisco"
+            class="city-image"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-4 city-col">
+          <h3>BERLIN</h3>
+          <div>
+            <i class="ion-person cities-icon"></i>
+            <p>1600+ happy eaters</p>
+          </div>
+          <div>
+            <i class="ion-star cities-icon"></i>
+            <p>60+ top chefs</p>
+          </div>
+          <div>
+            <i class="ion-social-twitter cities-icon"></i>
+            <a href="#">@omnifood.bn</a>
+          </div>
+        </div>
+        <div class="col span-1-of-4 city-col">
+          <h3>LISBON</h3>
+          <div>
+            <i class="ion-person cities-icon"></i>
+            <p>3700+ happy eaters</p>
+          </div>
+          <div>
+            <i class="ion-star cities-icon"></i>
+            <p>160+ top chefs</p>
+          </div>
+          <div>
+            <i class="ion-social-twitter cities-icon"></i>
+            <a href="#">@omnifood.lb</a>
+          </div>
+        </div>
+        <div class="col span-1-of-4 city-col">
+          <h3>LONDON</h3>
+          <div>
+            <i class="ion-person cities-icon"></i>
+            <p>2300+ happy eaters</p>
+          </div>
+          <div>
+            <i class="ion-star cities-icon"></i>
+            <p>110+ top chefs</p>
+          </div>
+          <div>
+            <i class="ion-social-twitter cities-icon"></i>
+            <a href="#">@omnifood.ln</a>
+          </div>
+        </div>
+        <div class="col span-1-of-4 city-col">
+          <h3>SAN-FRANCISCO</h3>
+          <div>
+            <i class="ion-person cities-icon"></i>
+            <p>1200+ happy eaters</p>
+          </div>
+          <div>
+            <i class="ion-star cities-icon"></i>
+            <p>50+ top chefs</p>
+          </div>
+          <div>
+            <i class="ion-social-twitter cities-icon"></i>
+            <a href="#">@omnifood.sf</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! CUSTOMER TESTIMONIALS -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="customer-testimonials">
+      <div class="row">
+        <h2 class="customer-h2">OUR CUSTOMERS CAN'T LIVE WITHOUT US</h2>
+      </div>
+      <div class="row customer-row">
+        <div class="col span-1-of-3">
+          <blockquote>
+            Omnifood is just awesome! I just launched a new startup which leaves
+            me with no time to cook, so Omnifood is a life saver. Now that I got
+            used to it I couldn't live without my daily meals!
+            <cite
+              ><img src="resources/img/customer-1.jpg" alt="Alberto duncun" />
+              Alberto Duncun</cite
+            >
+          </blockquote>
+        </div>
+        <div class="col span-1-of-3">
+          <blockquote>
+            Inexpensive, healthy and great-tasting meals, delivered right to my
+            home. We have lots of food delivery here in Lisbon, but no one comes
+            even close to Omnifood. Me and my family are so in love!
+            <cite
+              ><img src="resources/img/customer-2.jpg" alt="Alberto duncun" />
+              Joana Silva</cite
+            >
+          </blockquote>
+        </div>
+        <div class="col span-1-of-3">
+          <blockquote>
+            I was looking for a quick and easy food delivery service in San
+            Francisco. I tried a lot of them and ended up with omnifood. Best
+            food delivery service in the Bay area. Keep up the great work!
+            <cite
+              ><img
+                src="resources/img/customer-3.jpg"
+                alt="Alberto duncun"
+              />Milton chapman</cite
+            >
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! SIGN UP SECTION -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="sign-up js--section-plans">
+      <div class="row">
+        <h2>START EATING HEALTHY TODAY</h2>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <div class="plan-box">
+            <div>
+              <h3>PREMIUM</h3>
+              <p class="plan-price">$399 <span>/ month</span></p>
+              <!-- Span simply creates subsection within a paragraph or anything of such sort. Now "/ month" can be separately
+                modified in css-->
+              <p class="price-per-meal">That's only 13.30$ per meal</p>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>1 meal everyday
+                </li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Order 24/7
+                </li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Access to
+                  newest creations
+                </li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Free delivery
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="#" class="btn">Sign up now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col span-1-of-3">
+          <div class="plan-box">
+            <div>
+              <h3>PRO</h3>
+              <p class="plan-price">$149 <span>/ month</span></p>
+              <p class="price-per-meal">That's only 14.90$ per meal</p>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>1 meal every 10
+                  days/month
+                </li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Order 24/7
+                </li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Access to
+                  newest creations
+                </li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Free delivery
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="#" class="btn">Sign up now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col span-1-of-3">
+          <div class="plan-box">
+            <div>
+              <h3>STARTER</h3>
+              <p class="plan-price">$19 <span>/ meal</span></p>
+              <p class="price-per-meal">&nbsp;</p>
+              <!--We put a space so that it still occupys the area even though there is nothing there. but putting space 
+                normally won't work in this case. That is why we used this html special character that imitates whitespace-->
+            </div>
+            <div>
+              <ul>
+                <li><i class="ion-android-checkbox icon-small"></i>1 meal</li>
+                <li>
+                  <i class="ion-android-checkbox icon-small"></i>Order from 8 am
+                  to 12 pm
+                </li>
+                <li>
+                  <i class="ion-android-cancel icon-small-cross"></i>Access to
+                  newest creations
+                </li>
+                <li>
+                  <i class="ion-android-cancel icon-small-cross"></i>Free
+                  delivery
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="#" class="btn">Sign up now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! CONTACT FORM -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <section class="form">
+      <div class="row">
+        <h2>WE'RE HAPPY TO HEAR FROM YOU</h2>
+      </div>
+      <div class="row">
+        <form method="post" action="#" class="contact-form">
+          <!--the form element is best suited for creating forms. The method attribute in forms if set to post allows us to 
+            send the form somewhere by coding it in the backend. The action attribute can hold the link to the javaScript 
+            file that will control how the form should work-->
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="name">Name</label>
+              <!--for attribute lets you select the field if you click on it. Comment this command to see the difference -->
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Write your name here"
+                required
+              />
+              <!--the name attribute will be used later to send this form-->
+            </div>
+            <!-- We separated the columns like this by making one bigger than the other. The first column is the size of 
+                1 out of 3 and the second one is 2 out of 3. So 1+2 makes 3 check the grid.css to see what is the width
+                of these columns-->
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="email">Email</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your email"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="find-us">How did you find us?</label>
+            </div>
+            <div class="col span-2-of-3">
+              <select name="find-us" id="find-us">
+                <!-- the select element allows us to create dropdown menus-->
+                <option value="friends">Got it from a friend</option>
+                <option value="google" selected>Googled it</option>
+                <!--the selected attribute fixes the option to show by default in the menu box-->
+                <option value="ad">Saw an ad</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>Newsletter?</label>
+              <!--the for attribute does not work with checkbox and textarea types-->
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="newsletter"
+                checked
+              />
+              Yes, Please
+              <!--using the checked attribute will check the option in the beginning as a default-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>Drop us a line</label>
+            </div>
+            <div class="col span-2-of-3">
+              <textarea
+                name="message"
+                placeholder="What are your thoughts?"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>&nbsp;</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="submit" value="Send it!" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+    <!--! FOOTER -->
+    <!--! ------------------------------------------------------------------------------------------------------------------>
+
+    <footer>
+      <div class="row">
+        <div class="col span-1-of-2">
+          <ul class="footer-nav">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="col span-1-of-2">
+          <ul class="social-links">
+            <li>
+              <a href="https://www.facebook.com/"
+                ><i class="ion-social-facebook footer-icon"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/?lang=en"
+                ><i class="ion-social-twitter footer-icon"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/"
+                ><i class="ion-social-instagram footer-icon"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://myaccount.google.com/profile"
+                ><i class="ion-social-googleplus footer-icon"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <p>Copyright &copy; 2021 by Omnifood. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/script.js"></script>
+  </body>
+</html>

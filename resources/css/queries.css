@@ -1,0 +1,51 @@
+/* Media queries to make the website responsive */
+
+@media only screen and (max-width: 1800px){       /* this means the following rules will only apply when the maximum width of the screen is 1800px; */
+    .hero-text-box{
+        width: 100%;
+        padding: 0 2%;
+    }
+    .row{
+        padding: 0 2%;
+    }
+}
+
+@media only screen and (max-width: 1023px){       /* this means the following rules will only apply when the maximum width of the screen is 1023px (tablets in the portrait mode); */
+    body{font-size: 18px;}
+    section{padding: 60px 0;}
+    .long-copy{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .steps-box{
+        margin-top: 10px;
+    }
+    .steps-box:last-child{ margin-top: 10px;}
+    .works-step{ margin-bottom: 40px; }
+    .app-screen{ width: 50%; }
+    .cities-icon{ width: 20px;}
+    .contact-form{ width: 80%;}
+    .long-copy{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 768px){       /* this means the following rules will only apply when the maximum width of the screen is 768px ranging: 481 to 768 (mostly tablets); */
+    body{font-size: 16px;}
+    section{padding: 30px 0};
+    .row, .hero-text-box{padding: 0 4%;}
+    .col{width: 100%;}
+    .plan-box{transform: scale(0.9);}
+    .plan-box:hover{transform: scale(0.9);}
+    .main-nav{display: none;}       /*hides the element*/
+    .long-copy{
+        width: 100%;
+        margin-left: 0;
+    }
+    h2{font-size: 150%;}
+    .works-step{ margin-bottom: 20px; }
+    .app-screen{ width: 40%; }
+    .steps-box:first-child{text-align: center;}
+    .contact-form{ width: 100%;}
+}
