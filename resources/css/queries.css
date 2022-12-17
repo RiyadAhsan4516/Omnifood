@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 768px){       /* this means the following rules will only apply when the maximum width of the screen is 768px ranging: 481 to 768 (mostly tablets); */
     body{font-size: 16px;}
-    section{padding: 30px 0};
+    section{padding: 30px 0;}
     .row, .hero-text-box{padding: 0 4%;}
     .col{width: 100%;}
     .plan-box{transform: scale(0.9);}
